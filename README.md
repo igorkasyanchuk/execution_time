@@ -1,8 +1,10 @@
 # ExecutionTime
 
-This gem can get you an execution time info similar to processed requests directly in rails console.
+Monitor execution time and other metricts directly in `rails console`, similar to what you see after each request.
 
 `[METRICS]  Completed in 908.3ms | Allocations: 2894 | ActiveRecord: 0.9ms (queries: 13)`
+
+ <img src="https://github.com/igorkasyanchuk/execution_time/blob/master/docs/execution_time_new.gif?raw=true" width="90%" />
 
 ## Usage
 
