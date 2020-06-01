@@ -1,6 +1,6 @@
 # ExecutionTime
 
-Monitor execution time and other metricts directly in `rails console`, similar to what you see after each request.
+Monitor execution time and other metrics directly in `rails console`, similar to what you see after each request.
 
 `[METRICS]  Completed in 908.3ms | Allocations: 2894 | ActiveRecord: 0.9ms (queries: 13)`
 
@@ -22,7 +22,7 @@ gem 'execution_time'
 
 ## First run
 
-Sometime you can see that there are more SQL queries or allocated objects because Ruby just loading objects in memory or verifying connection to the DB.
+Sometime you can see that there are more SQL queries or allocated objects because Ruby is just loading objects in memory or verifying connection to the DB.
 
 ## Contributing
 
