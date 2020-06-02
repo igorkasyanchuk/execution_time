@@ -1,6 +1,17 @@
 require "execution_time/railtie"
 
 module ExecutionTime
+  mattr_accessor :enabled
+  @@enabled = true
+
+  def ExecutionTime.enable!
+    @@enabled = true
+  end
+
+  def ExecutionTime.disable!
+    @@enabled = false
+  end
+
   class AppMetrics
     @@counter = 0
 
@@ -32,6 +43,8 @@ module ExecutionTime
 
   class Measurer
     def Measurer.watch
+      return yield unless ExecutionTime.enabled
+
       AppMetrics.reset
 
       start     = Time.now

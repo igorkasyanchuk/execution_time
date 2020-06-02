@@ -24,6 +24,13 @@ gem 'execution_time'
 
 Sometime you can see that there are more SQL queries or allocated objects because Ruby is just loading objects in memory or verifying connection to the DB.
 
+## How to disable/enable metrics output in the console
+
+If you need to disable gem in the console you can do it by `ExecutionTime.disable!`. And later enable with `ExecutionTime.enable!`.
+
+By default gem is enabled.
+
+
 ## Contributing
 
 You are welcome to contribute.
