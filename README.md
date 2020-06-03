@@ -35,5 +35,9 @@ By default gem is enabled.
 
 You are welcome to contribute.
 
+## Contributos
+
+- https://github.com/nbulaj
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
