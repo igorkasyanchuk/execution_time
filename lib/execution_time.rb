@@ -47,14 +47,14 @@ module ExecutionTime
 
       AppMetrics.reset
 
-      start     = Time.now
+      start     = Process.clock_gettime(Process::CLOCK_MONOTONIC)
       before    = GC.stat(:total_allocated_objects)
       ActiveRecord::LogSubscriber.reset_runtime
 
       result   = yield
 
       after    = GC.stat(:total_allocated_objects)
-      duration = (Time.now - start)
+      duration = (Process.clock_gettime(Process::CLOCK_MONOTONIC) - start)
       db_after = ActiveRecord::LogSubscriber.reset_runtime
 
       info = "Completed in #{(duration * 1000).round(1)}ms | Allocations: #{after - before}"
