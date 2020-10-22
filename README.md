@@ -10,7 +10,20 @@ Monitor execution time and other metrics directly in `rails console`, similar to
 
 Just add this gem to the Gemfile and start `rails c`. After this try to do something like `User.first`.
 
-If you want to measure few lines of code just wrap it with `begin/end`.
+If you want to measure few lines of code just wrap it with `begin/end`:
+
+```ruby
+[4] pry(main)> begin
+[4] pry(main)*   User.first.first_name.size
+[4] pry(main)*   a = User.count + 1
+[4] pry(main)*   b = User.second.last_name.size
+[4] pry(main)* end  
+  User Load (0.4ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]
+   (3.6ms)  SELECT COUNT(*) FROM "users"
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2  [["LIMIT", 1], ["OFFSET", 1]]
+[METRICS]  Completed in 6.8ms | Allocations: 839 | ActiveRecord: 4.3ms (queries: 3)
+=> 5
+```
 
 ## Installation
 
