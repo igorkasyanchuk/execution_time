@@ -72,7 +72,11 @@ module ExecutionTime
   module IrbContextExt
     def evaluate(*args)
       Measurer.watch do
-        super(*args)
+        if RUBY_VERSION.to_s =~ /^3/
+          super(args[0], args[1], **args[2])
+        else
+          super(*args)
+        end
       end
     end
   end

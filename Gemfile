@@ -15,3 +15,5 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 # gem 'pry-rails'
+
+gem 'rails', '6.0.3.1'
