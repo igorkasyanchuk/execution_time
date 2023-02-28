@@ -1,5 +1,7 @@
 # ExecutionTime
 
+[![Listed on OpenSource-Heroes.com](https://opensource-heroes.com/badge-v1.svg)](https://opensource-heroes.com/r/igorkasyanchuk/execution_time)
+
 Monitor execution time and other metrics directly in `rails console`, similar to what you see after each request.
 
 `[METRICS]  Completed in 908.3ms | Allocations: 2894 | ActiveRecord: 0.9ms (queries: 13)`
