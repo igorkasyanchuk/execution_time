@@ -55,7 +55,7 @@ module ExecutionTime
 
       after    = GC.stat(:total_allocated_objects)
       duration = (Process.clock_gettime(Process::CLOCK_MONOTONIC) - start)
-      db_after =  ActiveRecord::RuntimeRegistry.reset
+      db_after = ActiveRecord::RuntimeRegistry.reset
 
       info = "Completed in #{(duration * 1000).round(1)}ms | Allocations: #{after - before}"
 
