@@ -19,7 +19,7 @@ If you want to measure few lines of code just wrap it with `begin/end`:
 [4] pry(main)*   User.first.first_name.size
 [4] pry(main)*   a = User.count + 1
 [4] pry(main)*   b = User.second.last_name.size
-[4] pry(main)* end  
+[4] pry(main)* end
   User Load (0.4ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]
    (3.6ms)  SELECT COUNT(*) FROM "users"
   User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2  [["LIMIT", 1], ["OFFSET", 1]]
@@ -33,6 +33,15 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'execution_time'
+```
+
+or
+
+```ruby
+gem "irb"
+gem "execution_time"
+
+# sometimes IRB is loaded after execution_time gem, so we need to load it first
 ```
 
 ## First run
@@ -53,6 +62,7 @@ You are welcome to contribute.
 ## Contributos
 
 - https://github.com/nbulaj
+- https://github.com/ruban-thilak
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

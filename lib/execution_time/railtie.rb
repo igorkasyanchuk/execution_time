@@ -1,6 +1,5 @@
 module ExecutionTime
   class Railtie < ::Rails::Railtie
-
     console do
       if const_defined?("Pry")
         Pry.send :prepend, ExecutionTime::PryExt
@@ -9,6 +8,5 @@ module ExecutionTime
         IRB::Context.send :prepend, ExecutionTime::IrbContextExt
       end
     end
-
   end
 end

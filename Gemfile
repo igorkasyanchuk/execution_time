@@ -16,6 +16,6 @@ gemspec
 
 # gem 'pry-rails'
 
-gem 'rails', '7.0.6'
+gem 'rails', '8.0.2'
 gem 'irb'
 gem 'pry'
