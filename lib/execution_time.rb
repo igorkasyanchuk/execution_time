@@ -49,13 +49,13 @@ module ExecutionTime
 
       start     = Process.clock_gettime(Process::CLOCK_MONOTONIC)
       before    = GC.stat(:total_allocated_objects)
-      ActiveRecord::LogSubscriber.reset_runtime
+      ActiveRecord::RuntimeRegistry.reset
 
       result   = yield
 
       after    = GC.stat(:total_allocated_objects)
       duration = (Process.clock_gettime(Process::CLOCK_MONOTONIC) - start)
-      db_after = ActiveRecord::LogSubscriber.reset_runtime
+      db_after = ActiveRecord::RuntimeRegistry.reset
 
       info = "Completed in #{(duration * 1000).round(1)}ms | Allocations: #{after - before}"
 
